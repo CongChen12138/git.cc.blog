@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>把旧笔记本改造成全能家庭服务器 | ocean&#39;s personal blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="关于私有服务器的基础设施建设及基础功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把旧笔记本改造成全能家庭服务器">
+<meta property="og:url" content="https://oceanhaiyang77.github.io/hexo-test-action/2026/02/04/infrastruction-construction/index.html">
+<meta property="og:site_name" content="ocean&#39;s personal blog">
+<meta property="og:description" content="关于私有服务器的基础设施建设及基础功能">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-02-04T08:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-09T17:57:51.307Z">
+<meta property="article:author" content="ocean">
+<meta property="article:tag" content="server">
+<meta property="article:tag" content="Kodi">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Alist">
+<meta property="article:tag" content="TTS">
+<meta property="article:tag" content="Cockpit">
+<meta property="article:tag" content="Syncthing">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/hexo-test-action/atom.xml" title="ocean's personal blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/hexo-test-action/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/hexo-test-action/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/hexo-test-action/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/hexo-test-action/" id="logo">ocean&#39;s personal blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/hexo-test-action/" id="subtitle">add a subtitle here...</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/hexo-test-action/">Home</a>
+        
+          <a class="main-nav-link" href="/hexo-test-action/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/hexo-test-action/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://oceanHaiyang77.github.io/hexo-test-action"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-infrastruction-construction" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/hexo-test-action/2026/02/04/infrastruction-construction/" class="article-date">
+  <time class="dt-published" datetime="2026-02-04T08:00:00.000Z" itemprop="datePublished">2026-02-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/hexo-test-action/categories/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/">阶段总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      把旧笔记本改造成全能家庭服务器
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>前言</strong><br>手里这台 i5 处理器的旧笔记本闲置很久了，食之无味弃之可惜。最近因为受够了愚蠢的机顶盒，决定把这台笔记本改造成一台 24 小时运行的 Linux 私有服务器，以替代和升级机顶盒。<br>这篇文章主要为了记录从零搭建的过程，既是技术复盘，也方便以后系统崩了（乌鸦嘴）能快速重建。目前已实现了 NAS、影音中心、自动化播报等功能。</p>
+<hr>
+<h2 id="一、-系统与硬件调教（基础环境）"><a href="#一、-系统与硬件调教（基础环境）" class="headerlink" title="一、 系统与硬件调教（基础环境）"></a>一、 系统与硬件调教（基础环境）</h2><p>系统选了 <strong>Ubuntu Server LTS</strong>，为了省资源没装桌面环境，全靠 SSH 和 Cockpit 远程管理。</p>
+<p><strong>Cockpit：</strong> 装了个 Web 管理面板（把端口改到了 9099 避开 Kodi），方便查看服务器状态（内存、外存、CPU、网络），以及便捷查看和控制进程状态。</p>
+<p><strong>两个必须记录的“坑”：</strong></p>
+<ol>
+<li><strong>物理合盖不休眠</strong><br>仅仅修改 <code>logind.conf</code> 是不够的，笔记本合盖后还是容易进入“假死”状态。</li>
+</ol>
+<ul>
+<li><strong>最终解法：</strong> 直接在内核层面屏蔽休眠目标：<code>systemctl mask sleep.target suspend.target ...</code>。现在盖上盖子，它就是一台纯正的服务器。</li>
+</ul>
+<ol start="2">
+<li><strong>硬盘空间的“消失”</strong><br>装完系统发现 500G 硬盘只显示 100G。原来 Ubuntu 默认策略保留了大量 LVM 空间。</li>
+</ol>
+<ul>
+<li><strong>解决：</strong> 熟练使用 <code>lvextend</code> 和 <code>resize2fs</code> 把空间全部分配给根目录 <code>/</code>。</li>
+</ul>
+<hr>
+<h2 id="二、-影音中心-Kodi-（核心功能）"><a href="#二、-影音中心-Kodi-（核心功能）" class="headerlink" title="二、 影音中心 Kodi （核心功能）"></a>二、 影音中心 Kodi （核心功能）</h2><p>这是目前家里使用频率最高的功能，作为“电视盒子”的替代品。</p>
+<h3 id="1-运行模式"><a href="#1-运行模式" class="headerlink" title="1. 运行模式"></a>1. 运行模式</h3><p>不同于常规安装，我把它配置成了后台服务。配合手机端的 <strong>Kore</strong> 遥控器，平时完全不需要接键盘鼠标，体验和商业机顶盒无异。</p>
+<h3 id="2-插件库连接问题"><a href="#2-插件库连接问题" class="headerlink" title="2. 插件库连接问题"></a>2. 插件库连接问题</h3><p>Kodi 自带的官方插件库在国内网络环境下访问极其缓慢，甚至无法连接。</p>
+<ul>
+<li><strong>尝试过的方案：</strong> 我深入到了安装目录 <code>/usr/share/kodi/</code> 下，尝试修改官方库的 xml 配置文件，手动替换成了清华镜像站地址。</li>
+<li><strong>当前状态：</strong> <strong>[待解决]</strong> 这种修改有所改善，但依然不能完全解决，部分插件更新还是会失败。看来单纯改源不够，后续可能需要考虑通过透明代理或 Docker 容器化来彻底解决网络层的问题。</li>
+</ul>
+<hr>
+<h2 id="三、-自动化播报"><a href="#三、-自动化播报" class="headerlink" title="三、 自动化播报"></a>三、 自动化播报</h2><p>以前写了个天气播报脚本，早上自动报天气。最初用的是微软 Edge-TTS 和 wttr.in 接口，结果网络一抖动就报错，体验很差。</p>
+<p><strong>现在的方案：商业数据源+本地化语音</strong></p>
+<ol>
+<li><p><strong>语音合成 (TTS)：</strong><br>放弃了在线接口，部署了 <strong>VITS 本地模型</strong>（<code>vits-aishell3.int8.onnx</code>）。优势在于 0 延迟，断网也能用，而且占用 CPU 极低。</p>
+</li>
+<li><p><strong>数据源：</strong><br>改用了高德地图 API，免费额度足够个人使用，数据也比国外的 wttr 准得多。</p>
+</li>
+</ol>
+<hr>
+<h2 id="四、-文件备份"><a href="#四、-文件备份" class="headerlink" title="四、 文件备份"></a>四、 文件备份</h2><p>这部分主打“无感备份”，借助 Syncthing 搭建了私有同步云。</p>
+<ul>
+<li><p><strong>策略：</strong> 手机端“只发送”，服务器端“只接收”且<strong>忽略删除</strong>。这样手机为了腾空间删掉照片，服务器上还会保留，实现了备份。</p>
+</li>
+<li><p><strong>网盘挂载：</strong> 用 Alist 把百度网盘、阿里云盘挂载成本地硬盘，配合 Syncthing 把以前散落在各处的照片都归拢到了本地。</p>
+</li>
+</ul>
+<hr>
+<h2 id="五、-下一步计划"><a href="#五、-下一步计划" class="headerlink" title="五、 下一步计划"></a>五、 下一步计划</h2><p>目前的架构已经很稳了，接下来的折腾方向：</p>
+<ol>
+<li><strong>容器化：</strong> 准备把能容器化的服务都搬进 Docker，保持系统洁净。</li>
+<li><strong>对外开放：</strong> 研究一下 Cloudflare Tunnel，争取在外面也能安全地访问家里的服务。</li>
+<li><strong>博客搭建：</strong> 也就是这篇博客的由来，正在完善静态博客的部署流程。</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>Note:</strong><br>本文档最后更新于 2026 年 2 月，部分技术细节（尤其是 Kodi 插件源）可能随软件版本更新而变化。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://oceanhaiyang77.github.io/hexo-test-action/2026/02/04/infrastruction-construction/" data-id="cmmjhi3ny0001r91ohldc59vt" data-title="把旧笔记本改造成全能家庭服务器" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-test-action/tags/Alist/" rel="tag">Alist</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-test-action/tags/Cockpit/" rel="tag">Cockpit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-test-action/tags/Kodi/" rel="tag">Kodi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-test-action/tags/NAS/" rel="tag">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-test-action/tags/Syncthing/" rel="tag">Syncthing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-test-action/tags/TTS/" rel="tag">TTS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-test-action/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-test-action/tags/server/" rel="tag">server</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/hexo-test-action/2026/02/14/ocean-cloud-platform/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          个人建站的全流程开发记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/hexo-test-action/2026/02/04/simple-git-use/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">简单的 Git 同步方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/hexo-test-action/categories/skills/">skills</a></li><li class="category-list-item"><a class="category-list-link" href="/hexo-test-action/categories/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/">阶段总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/Alist/" rel="tag">Alist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/Cockpit/" rel="tag">Cockpit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/Kodi/" rel="tag">Kodi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/NAS/" rel="tag">NAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/Syncthing/" rel="tag">Syncthing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/TTS/" rel="tag">TTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/note/" rel="tag">note</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexo-test-action/tags/ssh/" rel="tag">ssh</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/hexo-test-action/tags/Alist/" style="font-size: 10px;">Alist</a> <a href="/hexo-test-action/tags/Cockpit/" style="font-size: 10px;">Cockpit</a> <a href="/hexo-test-action/tags/Kodi/" style="font-size: 10px;">Kodi</a> <a href="/hexo-test-action/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/hexo-test-action/tags/Syncthing/" style="font-size: 10px;">Syncthing</a> <a href="/hexo-test-action/tags/TTS/" style="font-size: 10px;">TTS</a> <a href="/hexo-test-action/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/hexo-test-action/tags/blog/" style="font-size: 10px;">blog</a> <a href="/hexo-test-action/tags/cloudflare/" style="font-size: 10px;">cloudflare</a> <a href="/hexo-test-action/tags/git/" style="font-size: 10px;">git</a> <a href="/hexo-test-action/tags/note/" style="font-size: 10px;">note</a> <a href="/hexo-test-action/tags/server/" style="font-size: 10px;">server</a> <a href="/hexo-test-action/tags/ssh/" style="font-size: 10px;">ssh</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexo-test-action/archives/2026/02/">二月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/hexo-test-action/2026/02/14/ocean-cloud-platform/">个人建站的全流程开发记录</a>
+          </li>
+        
+          <li>
+            <a href="/hexo-test-action/2026/02/04/infrastruction-construction/">把旧笔记本改造成全能家庭服务器</a>
+          </li>
+        
+          <li>
+            <a href="/hexo-test-action/2026/02/04/simple-git-use/">简单的 Git 同步方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 ocean<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/hexo-test-action/" class="mobile-nav-link">Home</a>
+  
+    <a href="/hexo-test-action/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/hexo-test-action/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/hexo-test-action/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/hexo-test-action/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
