@@ -8,27 +8,27 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/hexo-test-action/img/fluid.png">
-  <link rel="icon" href="/hexo-test-action/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/git.cc.blog/img/fluid.png">
+  <link rel="icon" href="/git.cc.blog/img/fluid.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="ocean">
-  <meta name="keywords" content="blog, hexo, personal, ocean">
+  <meta name="author" content="cc">
+  <meta name="keywords" content="blog, hexo, personal, cc">
   
     <meta name="description" content="关于个人建站的阶段记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="个人建站的全流程开发记录">
-<meta property="og:url" content="https://oceanhaiyang77.github.io/hexo-test-action/2026/02/14/ocean-cloud-platform/index.html">
-<meta property="og:site_name" content="ocean&#39;s personal blog">
+<meta property="og:url" content="https://github.com/CongChen12138/git.cc.blog/2026/02/14/ocean-cloud-platform/index.html">
+<meta property="og:site_name" content="cc&#39;s personal blog">
 <meta property="og:description" content="关于个人建站的阶段记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-14T07:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-09T18:10:16.727Z">
-<meta property="article:author" content="ocean">
+<meta property="article:modified_time" content="2026-03-11T13:37:12.952Z">
+<meta property="article:author" content="cc">
 <meta property="article:tag" content="cloudflare">
 <meta property="article:tag" content="blog">
 <meta property="article:tag" content="note">
@@ -37,7 +37,7 @@
   
   
   
-  <title>个人建站的全流程开发记录 - ocean&#39;s personal blog</title>
+  <title>个人建站的全流程开发记录 - cc&#39;s personal blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -61,12 +61,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/hexo-test-action/css/main.css" />
+<link  rel="stylesheet" href="/git.cc.blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/hexo-test-action/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/git.cc.blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/hexo-test-action/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/git.cc.blog/css/highlight-dark.css" />
   
 
 
@@ -75,15 +75,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"oceanhaiyang77.github.io","root":"/hexo-test-action/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/hexo-test-action/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"github.com","root":"/git.cc.blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/git.cc.blog/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/hexo-test-action/js/utils.js" ></script>
-  <script  src="/hexo-test-action/js/color-schema.js" ></script>
+  <script  src="/git.cc.blog/js/utils.js" ></script>
+  <script  src="/git.cc.blog/js/color-schema.js" ></script>
   
 
 
@@ -100,7 +100,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/hexo-test-action/">
+    <a class="navbar-brand" href="/git.cc.blog/">
       <strong>Fluid</strong>
     </a>
 
@@ -119,7 +119,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/hexo-test-action/" target="_self">
+              <a class="nav-link" href="/git.cc.blog/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -131,7 +131,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/hexo-test-action/archives/" target="_self">
+              <a class="nav-link" href="/git.cc.blog/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -143,7 +143,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/hexo-test-action/categories/" target="_self">
+              <a class="nav-link" href="/git.cc.blog/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -155,7 +155,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/hexo-test-action/tags/" target="_self">
+              <a class="nav-link" href="/git.cc.blog/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -167,7 +167,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/hexo-test-action/about/" target="_self">
+              <a class="nav-link" href="/git.cc.blog/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -197,7 +197,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/hexo-test-action/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/git.cc.blog/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.4k 字
+          9.3k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          79 分钟
+          78 分钟
         
       </span>
     
@@ -301,7 +301,7 @@
 </ul>
 <p>鉴于上述原因，我决定放弃直连方案，改用 <strong>内网穿透（Tunnel）</strong>。对比了 Frp（需要自己租 VPS 做中转）和 Cloudflare Tunnel，后者免费、不需要额外服务器、提供安全防护、且自带全球 CDN 加速，显然是首选。</p>
 <h3 id="1-2-准备域名"><a href="#1-2-准备域名" class="headerlink" title="1.2 准备域名"></a>1.2 准备域名</h3><p>要用 Cloudflare，首先得有个域名。</p>
-<p>我在注册商买了 <code>oceanlog.top</code>，费用很低。买好后的第一件事，就是修改域名的 DNS 服务器（Nameservers），把它托管给 Cloudflare。</p>
+<p>我在注册商买了 <code>cclog.top</code>，费用很低。买好后的第一件事，就是修改域名的 DNS 服务器（Nameservers），把它托管给 Cloudflare。</p>
 <ul>
 <li><strong>操作</strong>：在域名注册商后台，将 NS 记录修改为 Cloudflare 分配的那两个地址（例如 <code>xxx.ns.cloudflare.com</code>）。</li>
 <li><strong>验证</strong>：去 Cloudflare 控制台添加站点，等到状态变成 “Active” 就算接管成功。</li>
@@ -327,9 +327,9 @@
 <li><p><strong>设置公网映射</strong> (Public Hostname)：</p>
 <p>在 Tunnel 的配置页面，添加一个 Public Hostname。</p>
 <ul>
-<li>Subdomain: <code>ssh</code> (即 <code>ssh.oceanlog.top</code>)</li>
+<li>Subdomain: <code>ssh</code> (即 <code>ssh.cclog.top</code>)</li>
 <li>Service: <code>ssh://localhost:22</code></li>
-<li>这一步告诉 Cloudflare，把访问 <code>ssh.oceanlog.top</code> 的流量，转发给我服务器的 22 端口。</li>
+<li>这一步告诉 Cloudflare，把访问 <code>ssh.cclog.top</code> 的流量，转发给我服务器的 22 端口。</li>
 </ul>
 </li>
 <li><p><strong>配置应用策略</strong> (Access Application)：</p>
@@ -338,7 +338,7 @@
 <li>在 Zero Trust 左侧菜单 <code>Access</code> -&gt; <code>Applications</code> -&gt; <code>Add an application</code> ，选择 <code>Self-hosted</code>。</li>
 <li>Application name: 填个名字比如 “SSH Web”。</li>
 <li>Session Duration: 设置登录一次管多久，比如 “24 hours”。</li>
-<li>Domain: 选择刚才配置的 <code>ssh.oceanlog.top</code>。</li>
+<li>Domain: 选择刚才配置的 <code>ssh.cclog.top</code>。</li>
 <li>添加身份验证规则<ul>
 <li><code>Rule name</code>: <code>Allow Me</code></li>
 <li><code>Rule action</code>: <code>Allow</code></li>
@@ -351,7 +351,7 @@
 </li>
 </ol>
 <p><strong>效果</strong>：</p>
-<p>保存后，我在任何浏览器的地址栏输入 <code>ssh.oceanlog.top</code>，就会弹出一个 Cloudflare 的身份验证页（验证邮箱验证码），验证通过后直接在浏览器里渲染出一个终端窗口，输入服务器账号密码即可登录。</p>
+<p>保存后，我在任何浏览器的地址栏输入 <code>ssh.cclog.top</code>，就会弹出一个 Cloudflare 的身份验证页（验证邮箱验证码），验证通过后直接在浏览器里渲染出一个终端窗口，输入服务器账号密码即可登录。</p>
 <p>至此，无论我有无公网 IP，只要有网，我就能完全控制家里的服务器。基础设施搭建完毕。</p>
 <hr>
 <h2 id="第二章-静态博客"><a href="#第二章-静态博客" class="headerlink" title="第二章 静态博客"></a>第二章 静态博客</h2><p>基础设施搞定后，先搭建一个简单的静态网站，用以存放个人博客。我不希望在这个环节投入任何服务器运维成本（比如去维护一个 Linux 上的 Nginx 或者 PHP 环境），所以我选择了 <strong>Jamstack</strong> 架构：<strong>Hexo + GitHub + Cloudflare Pages</strong>。</p>
@@ -365,7 +365,7 @@
 </ol>
 <h3 id="2-2-本地环境初始化"><a href="#2-2-本地环境初始化" class="headerlink" title="2.2 本地环境初始化"></a>2.2 本地环境初始化</h3><p>前提是电脑上得装好 Node.js 和 Git。</p>
 <p>安装 Hexo CLI 并初始化博客目录非常简单：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hexo-cli<br>hexo init ocean-blog<br><span class="hljs-built_in">cd</span> ocean-blog<br>npm install<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hexo-cli<br>hexo init cc-blog<br><span class="hljs-built_in">cd</span> cc-blog<br>npm install<br></code></pre></td></tr></table></figure>
 
 <p>初始化完成后，目录结构里最重要的几个部分是：</p>
 <ul>
@@ -378,7 +378,7 @@
 <p>很多教程的路线是 <code>hexo-deployer-git</code> 把生成的 HTML 推送到 GitHub Pages，那种方式不仅由于 GitHub 网络问题导致访问慢，而且你就丢失了源代码的版本控制。</p>
 <p>我的做法是：GitHub 存放源文件，CloudFlare 负责构建</p>
 <ol>
-<li>在 GitHub 上新建一个私有仓库，命名为 <code>ocean-blog-source</code>。私有是为了保护草稿和配置隐私。</li>
+<li>在 GitHub 上新建一个私有仓库，命名为 <code>cc-blog-source</code>。私有是为了保护草稿和配置隐私。</li>
 <li>在本地博客根目录初始化 Git：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br>git branch -M main<br>git remote add origin git@github.com:usr/repo.git<br></code></pre></td></tr></table></figure>
@@ -397,7 +397,7 @@
 <ol>
 <li><p>登录 Cloudflare Dashboard，进入 <code>Workers &amp; Pages</code> -&gt; <code>Create application</code> -&gt; <code>Pages</code> -&gt; <code>Connect to Git</code>。</p>
 </li>
-<li><p>授权访问我的 GitHub 账号，并选择刚才创建的 <code>ocean-blog-source</code> 仓库。</p>
+<li><p>授权访问我的 GitHub 账号，并选择刚才创建的 <code>cc-blog-source</code> 仓库。</p>
 </li>
 <li><p><strong>配置构建环境</strong>：</p>
 <p>Cloudflare 非常智能，预设了 Hexo 模板，通常只需要确认以下信息：</p>
@@ -418,12 +418,12 @@
 <p>tips: 当时我进行到这一步还遇到一点麻烦，就是 Cloudflare 虽然提供免费 <code>application</code> 服务，但是要求你绑定支付方式。我没有 Visa 或 MasterCard，在这一步还困了一些时候。最后我找到的解决办法是 <strong>PayPal</strong> ，它被 Cloufflare 接受且可以绑定国内的银联卡。</p>
 <p>为什么一开始没有想到 PayPal 呢？因为 Cloudflare 的页面设计有一点坑：在具体的某项目服务下绑定支付方式，可选项里没有 PayPal; 但当你退回到主页面的个人资料里去绑定的时候，就能看见 PayPal 了。</p>
 <h3 id="2-5-域名绑定"><a href="#2-5-域名绑定" class="headerlink" title="2.5 域名绑定"></a>2.5 域名绑定</h3><p>最后，给博客一个体面的入口。</p>
-<p>在 Cloudflare Pages 的项目设置里，点击 <code>Custom domains</code>，输入 <code>blog.oceanlog.top</code>（后改变主意，直接用主域名 <code>oceanlog.top</code>）。</p>
+<p>在 Cloudflare Pages 的项目设置里，点击 <code>Custom domains</code>，输入 <code>blog.cclog.top</code>（后改变主意，直接用主域名 <code>cclog.top</code>）。</p>
 <p>由于我的域名 DNS 本来就是 Cloudflare 托管的，它会自动添加一条 CNAME 记录，并自动申请和部署 SSL 证书。稍等片刻，HTTPS 的锁头就出现了。</p>
 <p>至此，一个高可用、零成本、自动化的静态博客系统搭建完成。</p>
 <hr>
 <h2 id="第三章-动态应用"><a href="#第三章-动态应用" class="headerlink" title="第三章 动态应用"></a>第三章 动态应用</h2><p>静态博客是对外展示，动态应用则是对内服务。这一部分涵盖了全栈开发、容器化部署、网络隔离的完整过程，是技术含量最高、逻辑最复杂的部分。</p>
-<p>这一章的目标是：从零开发一个前后端分离的私有便签应用（Ocean Notes），并将其容器化部署到服务器上。它必须满足三个核心需求：</p>
+<p>这一章的目标是：从零开发一个前后端分离的私有便签应用（cc Notes），并将其容器化部署到服务器上。它必须满足三个核心需求：</p>
 <ol>
 <li><strong>数据私有</strong>：内容存在我家服务器的硬盘上，而非第三方云端。</li>
 <li><strong>访问控制</strong>：通过长 Token 进行“门神”式验证。</li>
@@ -441,14 +441,14 @@
 <ol>
 <li><p><strong>数据模型</strong>：定义了前端传来的数据格式（<code>content</code>）和返回的数据格式（<code>id</code>, <code>timestamp</code>）。</p>
 </li>
-<li><p><strong>中间件鉴权</strong>：编写了一个依赖注入函数 <code>verify_token</code>。它会拦截每一个请求，检查 HTTP Header 中的 <code>X-Ocean-Token</code>。</p>
+<li><p><strong>中间件鉴权</strong>：编写了一个依赖注入函数 <code>verify_token</code>。它会拦截每一个请求，检查 HTTP Header 中的 <code>X-cc-Token</code>。</p>
 </li>
 <li><p><strong>环境变量隔离</strong>：这是安全开发的第一课。我没有将密码硬编码在代码里，而是通过 <code>os.getenv(&quot;SECRET_TOKEN&quot;)</code> 从系统环境变量中读取。</p>
 <p>需要注意的是，要在 .gitignore 添加忽略 .env 文件</p>
 </li>
 </ol>
 <p><strong>核心代码片段：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># main.py (部分核心逻辑)</span><br>app = FastAPI()<br><br><span class="hljs-comment"># 从环境变量读取密码，若无则使用默认值（开发环境）</span><br>EXPECTED_TOKEN = os.getenv(<span class="hljs-string">&quot;SECRET_TOKEN&quot;</span>, <span class="hljs-string">&quot;ocean_dev_token&quot;</span>)<br><br><span class="hljs-comment"># 依赖注入：门神验证</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">verify_token</span>(<span class="hljs-params">x_token: <span class="hljs-built_in">str</span> = Header(<span class="hljs-params">..., alias=<span class="hljs-string">&quot;X-Ocean-Token&quot;</span></span>)</span>):<br>    <span class="hljs-keyword">if</span> x_token != EXPECTED_TOKEN:<br>        <span class="hljs-keyword">raise</span> HTTPException(status_code=<span class="hljs-number">401</span>, detail=<span class="hljs-string">&quot;Invalid Token&quot;</span>)<br>    <span class="hljs-keyword">return</span> x_token<br><br><span class="hljs-comment"># 数据库路径：适配 Docker 挂载</span><br>DB_PATH = <span class="hljs-string">&quot;storage/data.db&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># main.py (部分核心逻辑)</span><br>app = FastAPI()<br><br><span class="hljs-comment"># 从环境变量读取密码，若无则使用默认值（开发环境）</span><br>EXPECTED_TOKEN = os.getenv(<span class="hljs-string">&quot;SECRET_TOKEN&quot;</span>, <span class="hljs-string">&quot;cc_dev_token&quot;</span>)<br><br><span class="hljs-comment"># 依赖注入：门神验证</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">verify_token</span>(<span class="hljs-params">x_token: <span class="hljs-built_in">str</span> = Header(<span class="hljs-params">..., alias=<span class="hljs-string">&quot;X-cc-Token&quot;</span></span>)</span>):<br>    <span class="hljs-keyword">if</span> x_token != EXPECTED_TOKEN:<br>        <span class="hljs-keyword">raise</span> HTTPException(status_code=<span class="hljs-number">401</span>, detail=<span class="hljs-string">&quot;Invalid Token&quot;</span>)<br>    <span class="hljs-keyword">return</span> x_token<br><br><span class="hljs-comment"># 数据库路径：适配 Docker 挂载</span><br>DB_PATH = <span class="hljs-string">&quot;storage/data.db&quot;</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="3-3-前端开发：Vue-3"><a href="#3-3-前端开发：Vue-3" class="headerlink" title="3.3 前端开发：Vue 3"></a>3.3 前端开发：Vue 3</h3><p>前端是一个单页应用，包含两个视图状态：</p>
 <ol>
@@ -488,7 +488,7 @@
 <h3 id="3-6-最终配置"><a href="#3-6-最终配置" class="headerlink" title="3.6 最终配置"></a>3.6 最终配置</h3><p>这是经过多次迭代后，稳定运行的 <code>docker-compose.yml</code>：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3.8&#x27;</span><br><br><span class="hljs-attr">services:</span><br>  <span class="hljs-comment"># 服务1：Python 后端 (核心业务)</span><br>  <span class="hljs-attr">simple-note-backend:</span><br>    <span class="hljs-attr">build:</span> <span class="hljs-string">./simple-note/backend</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-comment"># 安全：不暴露任何端口到宿主机</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./data:/app/storage</span>  <span class="hljs-comment"># 持久化存储</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">SECRET_TOKEN=$&#123;SECRET_TOKEN&#125;</span> <span class="hljs-comment"># 从 .env 读取密码</span><br><br>  <span class="hljs-comment"># 服务2：Nginx 网关 (流量入口)</span><br>  <span class="hljs-attr">nginx-gateway:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">nginx:alpine</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-comment"># 绑定到 Docker 网桥 IP，仅允许 Tunnel 访问，局域网不可见</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;172.17.0.1:8888:80&quot;</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./nginx/dev.conf:/etc/nginx/conf.d/default.conf</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./simple-note/frontend:/usr/share/nginx/html/simple-note</span><br>    <span class="hljs-attr">depends_on:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">simple-note-backend</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3-7-总结"><a href="#3-7-总结" class="headerlink" title="3.7 总结"></a>3.7 总结</h3><p>至此，我的私有云便签应用 “Ocean Notes” 已经稳稳地运行在旧服务器上了。</p>
+<h3 id="3-7-总结"><a href="#3-7-总结" class="headerlink" title="3.7 总结"></a>3.7 总结</h3><p>至此，我的私有云便签应用 “cc Notes” 已经稳稳地运行在旧服务器上了。</p>
 <p>回顾这部分工作，最大的收获不在于代码本身，而在于对 <strong>网络接口绑定</strong>、<strong>Docker 网络隔离</strong> 以及 <strong>数据持久化</strong> 的理解。这些在本地开发环境很难遇到的问题，在服务器部署实战中给我上了宝贵的一课。</p>
 <hr>
 <h2 id="第四章-总结与未来路线图"><a href="#第四章-总结与未来路线图" class="headerlink" title="第四章 总结与未来路线图"></a>第四章 总结与未来路线图</h2><h3 id="4-1-技术路线回顾"><a href="#4-1-技术路线回顾" class="headerlink" title="4.1 技术路线回顾"></a>4.1 技术路线回顾</h3><p>经过两周的折腾，这台服务器现在已经变成了一个标准化的私有云平台。回顾整个过程，我并没有捣鼓什么高深的技术，而是将业界成熟的方案进行了组合：</p>
@@ -558,7 +558,7 @@
     
       <span class="category-chain">
         
-  <a href="/hexo-test-action/categories/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/" class="category-chain-item">阶段总结</a>
+  <a href="/git.cc.blog/categories/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/" class="category-chain-item">阶段总结</a>
   
   
 
@@ -573,13 +573,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/hexo-test-action/tags/cloudflare/" class="print-no-link">#cloudflare</a>
+        <a href="/git.cc.blog/tags/cloudflare/" class="print-no-link">#cloudflare</a>
       
-        <a href="/hexo-test-action/tags/blog/" class="print-no-link">#blog</a>
+        <a href="/git.cc.blog/tags/blog/" class="print-no-link">#blog</a>
       
-        <a href="/hexo-test-action/tags/note/" class="print-no-link">#note</a>
+        <a href="/git.cc.blog/tags/note/" class="print-no-link">#note</a>
       
-        <a href="/hexo-test-action/tags/ssh/" class="print-no-link">#ssh</a>
+        <a href="/git.cc.blog/tags/ssh/" class="print-no-link">#ssh</a>
       
     </div>
   
@@ -592,13 +592,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>个人建站的全流程开发记录</div>
-      <div>https://oceanhaiyang77.github.io/hexo-test-action/2026/02/14/ocean-cloud-platform/</div>
+      <div>https://github.com/CongChen12138/git.cc.blog/2026/02/14/ocean-cloud-platform/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>ocean</div>
+          <div>cc</div>
         </div>
       
       
@@ -640,7 +640,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/hexo-test-action/2026/02/04/infrastruction-construction/" title="把旧笔记本改造成全能家庭服务器">
+                      <a href="/git.cc.blog/2026/02/04/infrastruction-construction/" title="把旧笔记本改造成全能家庭服务器">
                         <span class="hidden-mobile">把旧笔记本改造成全能家庭服务器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -769,8 +769,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/hexo-test-action/js/events.js" ></script>
-<script  src="/hexo-test-action/js/plugins.js" ></script>
+<script  src="/git.cc.blog/js/events.js" ></script>
+<script  src="/git.cc.blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -792,7 +792,7 @@
 
 
   
-    <script  src="/hexo-test-action/js/img-lazyload.js" ></script>
+    <script  src="/git.cc.blog/js/img-lazyload.js" ></script>
   
 
 
@@ -891,7 +891,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/hexo-test-action/js/local-search.js" ></script>
+  <script  src="/git.cc.blog/js/local-search.js" ></script>
 
 
 
@@ -899,7 +899,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/hexo-test-action/js/boot.js" ></script>
+<script  src="/git.cc.blog/js/boot.js" ></script>
 
 
   
