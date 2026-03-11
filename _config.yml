@@ -3,19 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ocean's personal blog
+title: cc's personal blog
 subtitle: 'add a subtitle here...'
 description: 'This is a page description ...'
-keywords: blog, hexo, personal, ocean
-author: ocean
+keywords: blog, hexo, personal, cc
+author: cc
 language: zh-CN
 
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://oceanHaiyang77.github.io/hexo-test-action
-root: /hexo-test-action/
+url: https://github.com/CongChen12138/git.cc.blog
+root: /git.cc.blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -106,7 +106,7 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/oceanHaiyang77/oceanHaiyang77.github.io.git
+  repo: https://github.com/CongChen12138/git.cc.blog.git
   branch: main
 
   
